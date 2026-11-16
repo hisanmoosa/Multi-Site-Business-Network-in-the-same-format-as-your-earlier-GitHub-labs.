@@ -1,0 +1,30 @@
+Selected CLI evidence from the lab
+==================================
+
+Limerick-router>show ip ospf neighbor
+Neighbor ID     Pri   State      Dead Time   Address       Interface
+192.168.20.1     1    FULL/BDR   00:00:37    10.255.0.5    GigabitEthernet0/2
+
+Limerick-router>show ip route ospf
+O       10.255.0.0 [110/2] via 10.255.0.5, 00:15:40, GigabitEthernet0/2
+O    192.168.10.0 [110/2] via 10.255.0.5, 00:15:40, GigabitEthernet0/2
+O    192.168.20.0 [110/2] via 10.255.0.5, 00:15:40, GigabitEthernet0/2
+O    192.168.30.0 [110/2] via 10.255.0.5, 00:15:40, GigabitEthernet0/2
+O    192.168.40.0 [110/3] via 10.255.0.5, 00:15:40, GigabitEthernet0/2
+O*E2 0.0.0.0/0 [110/1] via 10.255.0.5, 00:15:40, GigabitEthernet0/2
+
+Cork, selected output from show ip route
+O*E2 0.0.0.0/0 [110/1] via 10.255.0.1, 00:00:49, GigabitEthernet0/1
+
+R1-Dublin#show ip nat translations
+Pro  Inside global     Inside local       Outside local     Outside global
+tcp  203.0.113.1:1025   192.168.40.11:1025 198.51.100.10:80  198.51.100.10:80
+tcp  203.0.113.1:1027   192.168.10.21:1027 198.51.100.10:80  198.51.100.10:80
+tcp  203.0.113.1:1028   192.168.50.11:1028 198.51.100.10:80  198.51.100.10:80
+tcp  203.0.113.1:1035   192.168.60.11:1035 198.51.100.10:80  198.51.100.10:80
+
+Dublin switching, selected output from show etherchannel summary
+Number of channel-groups in use: 1
+Number of aggregators: 1
+Group  Port-channel  Protocol  Ports
+1      Po1(SU)       LACP      Fa0/23(P) Fa0/24(P)

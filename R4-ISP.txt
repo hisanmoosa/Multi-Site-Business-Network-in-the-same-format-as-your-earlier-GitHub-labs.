@@ -1,0 +1,10 @@
+hostname R4-ISP
+interface GigabitEthernet0/0
+ ip address 203.0.113.2 255.255.255.252
+ no shutdown
+ exit
+interface GigabitEthernet0/1
+ ip address 198.51.100.1 255.255.255.0
+ no shutdown
+ exit
+end
